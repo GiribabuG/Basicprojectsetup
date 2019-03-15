@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-sm-12">
+        <div class="col-md-6" *ngFor="let data of getarray">
+            <input type="file" class="form-control" multiple (change)="detectFiles($event)">
+        </div>
+        <div class="col-md-6" (click)="addrow()">
+            <span>
+                <button type="button" class="btn btn-success btn-add">+</button>
+            </span>
+            <input type="submit" class="btn btn-primary" name='submit_image' value="Upload Multiple Image" />
+        </div>
+        <div class="col-sm-4" *ngFor="let url of urls">
+            <div style="padding:15px;border:1px solid green; margin-top: 15px;">
+                <img [src]="url" class="rounded mb-3" width="300px" height="250px;">
+            </div>
+        </div>
+    </div>
+</div>

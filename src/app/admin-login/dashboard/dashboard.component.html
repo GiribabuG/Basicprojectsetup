@@ -1,0 +1,85 @@
+<header class="header">
+  <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
+    <div class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </div>
+    <a class="navbar-brand p-0 mr-5"></a>
+    <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
+    </div>
+  </nav>
+</header>
+<div class="main">
+  <aside class="col-sm-2" style="padding:0">
+    <div class="sidebar left ">
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="http://via.placeholder.com/160x160" class="rounded-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>bootstrap develop</p>
+          <a>
+            <i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <ul class="list-sidebar bg-defoult">
+
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/dashboard/quick-actions']">
+            <i class="fa fa-diamond"></i>
+            <span class="nav-label">Quick Ations</span>
+          </a>
+        </li>
+
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/dashboard/users-list']">
+            <i class="fa fa-laptop"></i>
+            <span class="nav-label">userDetails</span>
+          </a>
+        </li>
+
+
+
+        <li>
+          <a>
+            <i class="fa fa-pie-chart"></i>
+            <span class="nav-label" (click)="logOut()">Logout</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-files-o"></i>
+            <span class="nav-label">Other Pages</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-files-o"></i>
+            <span class="nav-label">Other Pages</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-files-o"></i>
+            <span class="nav-label">Other Pages</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-files-o"></i>
+            <span class="nav-label">Other Pages</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-files-o"></i>
+            <span class="nav-label">Other Pages</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <div class="col-sm-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

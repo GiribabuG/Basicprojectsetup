@@ -1,0 +1,21 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">USer Name</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userDetails ; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{user.name.first}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.createdAt | date}}</td>
+        <td><button type="button" class="btn btn-success" routerLink="/dashboard/users-profile/{{user._id}}">View Profile</button></td>
+      </tr>
+    </tbody>
+  </table>
+  

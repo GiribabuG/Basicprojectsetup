@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row center-block">
+    <div class="col-md-12">
+       <h3> User Details</h3>
+    </div>
+    <div class="col-md-12">
+      <form>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="First Name *" name="first1"  [(ngModel)]="profileres.first"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Last Name * "name="last1" #last1="ngModel" [(ngModel)]="profileres.last"/>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <input type="number" class="form-control" placeholder=" " name="cCode" #cCode="ngModel" [(ngModel)]="profileres.countryCode"/>
+          </div>
+        </div>
+        <div class="col-md-9">
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="Phone Number *" name="phone" #phone="ngModel" [(ngModel)]="profileres.number"/>
+            </div>
+          </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email *" name="email" #email="ngModel" [(ngModel)]="profileres.email"/>
+      </div>
+      <p routerLink ="/changepassword">Change your password?</p>
+      <button type="submit" class="btnRegister" (click)="logout()" style="float:left;">logout</button>
+      <button type="submit" class="btnRegister" (click)="userprofile()">Submit</button>
+    </form>
+    </div>
+
+  </div>
+</div>

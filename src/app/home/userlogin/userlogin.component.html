@@ -1,0 +1,21 @@
+<div class="container">
+        <div class="row center-block">
+          <div class="col-md-12">
+             <h3> User Lgin</h3>
+          </div>
+          <div class="col-md-12">
+            <form>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="User Name *" name="user" #user="ngModel" [(ngModel)]="email"/>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password *" name="pass" #pass="ngModel" [(ngModel)]="password"/>
+            </div>
+            <div class="btnRegister1" routerLink="/forgotpassword">Forgot? Password  </div>
+            <button type="submit" class="btnRegister" (click)="submit()">Submit</button>
+          </form>
+          </div>
+      
+        </div>
+      </div>
+      
