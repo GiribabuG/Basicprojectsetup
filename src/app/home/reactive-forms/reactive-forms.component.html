@@ -3,18 +3,21 @@
         <div class="col-md-6 offset-md-3">
             <form [formGroup]="register" (ngSubmit)="onSubmit()">
                 <div class="form-group">
+                    <label>First Name</label>
                     <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid' : submitted && f.firstName.errors}">
                     <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                         <div *ngIf="f.firstName.errors.required">FirstName is required</div>
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Last Name</label>
                     <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid' : submitted && f.lastName.errors}">
                     <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                         <div *ngIf="f.lastName.errors.required">lastName is required</div>
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Email</label>
                     <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid' : submitted && f.email.errors}">
                     <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                         <div *ngIf="f.email.errors.required">email is required</div>
@@ -22,16 +25,62 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Password</label>
                     <input type="text" class="form-control" formControlName="password" [ngClass]="{'is-invalid' : submitted && f.password.errors}">
                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                         <div *ngIf="f.password.errors.required">password is required</div>
                         <div *ngIf="f.password.errors.minlength">password is required</div>
                     </div>
                 </div>
+
+                <div formArrayName="items" *ngFor="let item of register.get('items').controls; let i = index;">
+                    <div [formGroupName]="i">
+                        <div class="form-group">
+                            <label>House Number</label>
+                            <input type="text" class="form-control" formControlName="houseNum">
+                            <div *ngIf="submitted && f.houseNum.errors" class="invalid-feedback">
+                                <div *ngIf="f.houseNum.errors.required">houseNumber is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Street</label>
+                            <input type="text" class="form-control" formControlName="street">
+                            <!-- <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+                                <div *ngIf="f.street.errors.required">Street is required</div>
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label>city</label>
+                            <input type="text" class="form-control" formControlName="city">
+                            <!-- <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                <div *ngIf="f.city.errors.required">city is required</div>
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" class="form-control" formControlName="state">
+                            <!-- <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                <div *ngIf="f.state.errors.required">State is required</div>
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label>PIN Code</label>
+                            <input type="text" class="form-control" formControlName="pincode">
+                            <!-- <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                                <div *ngIf="f.pincode.errors.required">pincode is required</div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary" (click)="addItem()">+Add address </button>
+                </div>
                 <div class="form-group">
                     <button [disabled]="loading" class="btn btn-primary">Register</button>
                 </div>
+
             </form>
         </div>
     </div>
+
 </div>
